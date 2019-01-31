@@ -78,6 +78,10 @@ RUN set -ex; \
   \
   chown -R flink:flink .;
 
+# Limit the number of slots
+RUN sed -i "s|taskmanager.numberOfTaskSlots|#taskmanager.numberOfTaskSlots|g" /opt/flink/conf/flink-conf.yaml
+RUN echo "taskmanager.numberOfTaskSlots : 1" >> /opt/flink/conf/flink-conf.yaml
+
 # Configure container
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
