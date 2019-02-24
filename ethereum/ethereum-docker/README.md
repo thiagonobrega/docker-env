@@ -1,5 +1,7 @@
 # Ethereum Docker
 
+https://1devblog.org/article/local-env-for-ethereum-smart-contracts-dev-using-docker
+
 Get started creating Ethereum development and test single and multi-node clusters
 rapidly using Docker.
 
@@ -97,3 +99,18 @@ To speed up the process, you can use a [pre-generated DAG](https://github.com/et
 ADD dag/full-R23-0000000000000000 /root/.ethash/full-R23-0000000000000000
 ```
 to the `monitored-geth-client` Dockerfile.
+
+
+> personal.newAccount("senha")
+"0xe9f7f0dc825612ce7d35422781205f5ec1e5f380"
+> personal.unlockAccount('0xe9f7f0dc825612ce7d35422781205f5ec1e5f380','senha')
+
+
+geth --rpcapi db,eth,net,web3,personal,miner attach http://127.0.0.1:8545
+
+geth --rpcapi db,eth,net,web3,personal,miner attach http://172.24.0.3:8545
+
+ docker exec -it ethereum-docker_eth_1 geth --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
+
+
+https://arvanaghi.com/blog/testing-smart-contracts-on-a-private-blockchain-with-Geth/
