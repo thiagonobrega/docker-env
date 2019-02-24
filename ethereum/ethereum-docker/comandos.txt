@@ -1,0 +1,58 @@
+docker exec -it ethereum-docker_eth_1 geth --datadir=~/.ethereum/devchain  attach ipc://root/.ethereum/devchain/geth.ipc
+
+personal.newAccount()
+Passphrase:
+Repeat passphrase:
+"0xac5f3c69e6261077fb2678053db2188683590125"
+
+personal.unlockAccount('0xac5f3c69e6261077fb2678053db2188683590125','thiago',300)
+personal.unlockAccount('0xac5f3c69e6261077fb2678053db2188683590125','thiago',0)
+
+personal.unlockAccount('0x007ccffb7916f37f7aeef05e8096ecfbe55afc2f','',300)
+
+
+
+#docker exec -it ethereum-docker_eth_1 geth
+
+> personal.unlockAccount('0xe7c1794653bb52ebfd0cd1e74fd22217d4f689cd','password',1)
+
+
+personal.unlockAccount(address, "password", 300)
+
+["0x007ccffb7916f37f7aeef05e8096ecfbe55afc2f", "0x99429f64cf4d5837620dcc293c1a537d58729b68", "0xca247d7425a29c6645fa991f9151f994a830882d", "0x794f74c8916310d6a0009bb8a43a5acab59a58ad", "0x276ecb88715a503b00d1f15af4c17dc051991667", "0x83042c0147acce98e35ed9ef52e6dfc5c67ef92e", "0x8ab7114ba0f7ca706af69f799588766c8426aa24", "0x932d9e95e5d2cac02eebbe6763ab2c7b0a9d6a2f", "0x893c3f80d2a0375b3f00f856cf8a6775e4efc26a", "0xb1d3073bcc45462a3b0dfe69902cdd12971efec9", "0xa175a9be6d881f6ea3e9fd47f0857ef051d37674", "0xe9f7f0dc825612ce7d35422781205f5ec1e5f380", "0xe7c1794653bb52ebfd0cd1e74fd22217d4f689cd"]
+
+> web3.fromWei(eth.getBalance(eth.coinbase), "ether")
+6.5
+Print all balances with a JavaScript function:
+
+per
+
+
+
+personal.unlockAccount('0x007ccffb7916f37f7aeef05e8096ecfbe55afc2f','',300)
+
+> var sender = eth.accounts[0];
+undefined
+> var receiver = eth.accounts[12]/
+(anonymous): Line 2:1 Unexpected end of input
+> var receiver = eth.accounts[12];
+undefined
+> var amount = web3.toWei(10.01, "ether")
+undefined
+> eth.sendTransaction({from:sender, to:receiver, value: amount})
+
+var greeter = eth.contract(ABI).at(Address);
+
+
+Print all balances with a JavaScript function:
+
+function checkAllBalances() {
+    var totalBal = 0;
+    for (var acctNum in eth.accounts) {
+        var acct = eth.accounts[acctNum];
+        var acctBal = web3.fromWei(eth.getBalance(acct), "ether");
+        totalBal += parseFloat(acctBal);
+        console.log("  eth.accounts[" + acctNum + "]: \t" + acct + " \tbalance: " + acctBal + " ether");
+    }
+    console.log("  Total balance: " + totalBal + " ether");
+};
