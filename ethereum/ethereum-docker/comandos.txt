@@ -1,3 +1,5 @@
+# docker system prune -f --all
+
 docker exec -it ethereum-docker_eth_1 geth --datadir=~/.ethereum/devchain  attach ipc://root/.ethereum/devchain/geth.ipc
 
 personal.newAccount()
