@@ -1,12 +1,6 @@
 # Ethereum Docker
 
-https://1devblog.org/article/local-env-for-ethereum-smart-contracts-dev-using-docker
-
-Get started creating Ethereum development and test single and multi-node clusters
-rapidly using Docker.
-
-We provide full Ethereum test nodes (using the [Ethereum Go client](https://github.com/ethereum/go-ethereum) with all APIs enabled by default as well as a monitoring dashboard (for the cluster version) provided
-via [Netstats](https://github.com/cubedro/eth-netstats).
+Docs 
 
 #### Alternative projects
 
@@ -99,6 +93,15 @@ To speed up the process, you can use a [pre-generated DAG](https://github.com/et
 ADD dag/full-R23-0000000000000000 /root/.ethash/full-R23-0000000000000000
 ```
 to the `monitored-geth-client` Dockerfile.
+
+# Extras
+https://1devblog.org/article/local-env-for-ethereum-smart-contracts-dev-using-docker
+
+Get started creating Ethereum development and test single and multi-node clusters
+rapidly using Docker.
+
+We provide full Ethereum test nodes (using the [Ethereum Go client](https://github.com/ethereum/go-ethereum) with all APIs enabled by default as well as a monitoring dashboard (for the cluster version) provided
+via [Netstats](https://github.com/cubedro/eth-netstats).
 
 
 > personal.newAccount("senha")
