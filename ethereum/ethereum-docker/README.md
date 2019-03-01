@@ -110,7 +110,13 @@ geth --rpcapi db,eth,net,web3,personal,miner attach http://127.0.0.1:8545
 
 geth --rpcapi db,eth,net,web3,personal,miner attach http://172.24.0.3:8545
 
- docker exec -it ethereum-docker_eth_1 geth --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
+docker exec -it ethereum-docker_eth_1 geth --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
 
 
 https://arvanaghi.com/blog/testing-smart-contracts-on-a-private-blockchain-with-Geth/
+
+docker-compose up -d --scale eth=4
+
+docker exec -it ethereum-docker_eth_2 geth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
+docker exec -it ethereum-docker_eth_2 3eth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
+docker exec -it ethereum-docker_eth_3 geth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc

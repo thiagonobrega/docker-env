@@ -1,8 +1,9 @@
-version: '2'
+version: '2.3'
 services:
   bootstrap:
     build: monitored-geth-client
     restart: on-failure
+    # container_name nao funciona no v3
     container_name: bootstrap
     hostname: bootstrap
     links:
@@ -31,6 +32,19 @@ services:
       - ./files/keystore:/root/.ethereum/devchain/keystore:rw
       #removido local time
     command: '--datadir=~/.ethereum/devchain --rpccorsdomain="*" --networkid=456719 --rpc --bootnodes="enode://288b97262895b1c7ec61cf314c2e2004407d0a5dc77566877aad1f2a36659c8b698f4b56fd06c4a0c0bf007b4cfb3e7122d907da3b005fa90e724441902eb19e@XXX:30303"'
+    # docker-compose v3
+    #    deploy:
+    #  resources:
+    #    limits:
+    #      cpus: '0.25'
+    #      memory: 2048M
+    #    reservations:
+    #      cpus: '0.12'
+    #      memory: 1024M
+    cpu_count: 1
+    cpu_percent: 50
+    cpus: 0.5
+
   netstats:
     build: eth-netstats
     restart: on-failure
