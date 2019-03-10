@@ -33,15 +33,10 @@ per
 
 personal.unlockAccount('0x007ccffb7916f37f7aeef05e8096ecfbe55afc2f','',300)
 
-> var sender = eth.accounts[0];
-undefined
-> var receiver = eth.accounts[12]/
-(anonymous): Line 2:1 Unexpected end of input
-> var receiver = eth.accounts[12];
-undefined
-> var amount = web3.toWei(10.01, "ether")
-undefined
-> eth.sendTransaction({from:sender, to:receiver, value: amount})
+var sender = eth.accounts[0];
+var receiver = eth.accounts[1];
+var amount = web3.toWei(500.01, "ether")
+eth.sendTransaction({from:sender, to:receiver, value: amount})
 
 var greeter = eth.contract(ABI).at(Address);
 

@@ -120,6 +120,7 @@ https://arvanaghi.com/blog/testing-smart-contracts-on-a-private-blockchain-with-
 
 docker-compose up -d --scale eth=4
 
-docker exec -it ethereum-docker_eth_2 geth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
+docker exec -it ethereum-docker_eth_1 geth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
 docker exec -it ethereum-docker_eth_2 3eth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
 docker exec -it ethereum-docker_eth_3 geth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
+docker exec -it ethereum-docker_eth_4 geth  --datadir=~/.ethereum/devchain attach ipc://root/.ethereum/devchain/geth.ipc
